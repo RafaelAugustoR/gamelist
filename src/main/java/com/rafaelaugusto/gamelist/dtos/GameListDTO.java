@@ -1,6 +1,6 @@
 package com.rafaelaugusto.gamelist.dtos;
 
-import com.rafaelaugusto.gamelist.entities.Game;
+import com.rafaelaugusto.gamelist.entities.GameList;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,15 +9,11 @@ import org.springframework.beans.BeanUtils;
 @NoArgsConstructor
 @Getter
 @Setter
-public class GameMinDTO {
+public class GameListDTO {
+    private Long id;
+    private String name;
 
-    private Long Id;
-    private String title;
-    private Integer year;
-    private String imgUrl;
-    private String shortDescription;
-
-    public GameMinDTO(Game entity) {
+    public GameListDTO(GameList entity){
         BeanUtils.copyProperties(entity, this);
     }
 }
