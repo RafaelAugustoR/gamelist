@@ -3,6 +3,7 @@ package com.rafaelaugusto.gamelist.services;
 import com.rafaelaugusto.gamelist.dtos.GameDTO;
 import com.rafaelaugusto.gamelist.dtos.GameMinDTO;
 import com.rafaelaugusto.gamelist.entities.Game;
+import com.rafaelaugusto.gamelist.projections.GameMinProjection;
 import com.rafaelaugusto.gamelist.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,12 @@ public class GameService {
     @Transactional(readOnly = true)
     public List<GameMinDTO> findAll(){
         List<Game> gamesFilter = gameRepository.findAll();
+        return gamesFilter.stream().map(x -> new GameMinDTO(x)).toList();
+    }
+
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> findByList(Long listId){
+        List<GameMinProjection> gamesFilter = gameRepository.searchByList(listId);
         return gamesFilter.stream().map(x -> new GameMinDTO(x)).toList();
     }
 }

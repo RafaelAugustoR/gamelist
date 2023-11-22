@@ -17,9 +17,17 @@ import java.util.List;
 @RequestMapping("/lists")
 public class GameListController {
     @Autowired
-    GameListService gameListService;
+    private GameListService gameListService;
+
+    @Autowired
+    private GameService gameService;
     @GetMapping("")
     public List<GameListDTO> findAll(){
         return gameListService.findAll();
     }
+    @GetMapping("/{listId}/games")
+    public List<GameMinDTO> findByList(@PathVariable Long listId){
+        return gameService.findByList(listId);
+    }
+
 }
