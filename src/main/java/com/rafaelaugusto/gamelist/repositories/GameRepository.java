@@ -1,7 +1,7 @@
 package com.rafaelaugusto.gamelist.repositories;
 
 import com.rafaelaugusto.gamelist.entities.Game;
-import com.rafaelaugusto.gamelist.projections.GameMinProjection;
+import com.rafaelaugusto.gamelist.projection.GameMinProjection;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -14,7 +14,7 @@ public interface GameRepository extends JpaRepository<Game, Long> {
 		tb_game.short_description AS shortDescription, tb_belonging.position
 		FROM tb_game
 		INNER JOIN tb_belonging ON tb_game.id = tb_belonging.game_id
-		WHERE tb_belonging.gamelist_id = :listId
+		WHERE tb_belonging.list_id = :listId
 		ORDER BY tb_belonging.position
 			""")
 	List<GameMinProjection> searchByList(Long listId);

@@ -15,6 +15,6 @@ public class BelongingPK {
     private Game game;
 
     @ManyToOne
-    @JoinColumn(name = "gamelist_id")
-    private GameList gameList;
+    @JoinColumn(name = "list_id")
+    private GameList list;
 }

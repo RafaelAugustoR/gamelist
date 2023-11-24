@@ -1,4 +1,4 @@
-package com.rafaelaugusto.gamelist.projections;
+package com.rafaelaugusto.gamelist.projection;
 
 public interface GameMinProjection {
     Long getId();

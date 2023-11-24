@@ -1,32 +1,30 @@
 package com.rafaelaugusto.gamelist.dtos;
 
 import com.rafaelaugusto.gamelist.entities.Game;
-import com.rafaelaugusto.gamelist.projections.GameMinProjection;
+import com.rafaelaugusto.gamelist.projection.GameMinProjection;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.beans.BeanUtils;
 
 @NoArgsConstructor
 @Getter
-@Setter
 public class GameMinDTO {
 
-    private Long Id;
+    private Long id;
     private String title;
     private Integer year;
     private String imgUrl;
     private String shortDescription;
 
     public GameMinDTO(Game entity) {
-        this.Id = entity.getId();
-        this.title = entity.getTitle();
-        this.year = entity.getYear();
-        this.imgUrl = entity.getImgUrl();
-        this.shortDescription = entity.getShortDescription();
+        id = entity.getId();
+        title = entity.getTitle();
+        year = entity.getYear();
+        imgUrl = entity.getImgUrl();
+        shortDescription = entity.getShortDescription();
     }
     public GameMinDTO(GameMinProjection projection) {
-        Id = projection.getId();
+        id = projection.getId();
         title = projection.getTitle();
         year = projection.getGameYear();
         imgUrl = projection.getImgUrl();
