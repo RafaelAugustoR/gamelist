@@ -1,7 +1,6 @@
 package com.rafaelaugusto.gamelist.services;
 
 import com.rafaelaugusto.gamelist.dtos.GameListDTO;
-import com.rafaelaugusto.gamelist.dtos.ReplacementDTO;
 import com.rafaelaugusto.gamelist.entities.GameList;
 import com.rafaelaugusto.gamelist.projection.GameMinProjection;
 import com.rafaelaugusto.gamelist.repositories.GameListRepository;
@@ -9,9 +8,6 @@ import com.rafaelaugusto.gamelist.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-
 import java.util.List;
 
 @Service
@@ -24,7 +20,10 @@ public class GameListService {
     @Transactional(readOnly = true)
     public List<GameListDTO> findAll(){
         List<GameList> gamesFilter = gameListRepository.findAll();
-        return gamesFilter.stream().map(x -> new GameListDTO(x)).toList();
+        return gamesFilter.stream().map(x -> GameListDTO.builder()
+                .id(x.getId())
+                .name(x.getName())
+                .build()).toList();
     }
 
     @Transactional
@@ -42,10 +41,12 @@ public class GameListService {
             gameListRepository.updateBelongingPosition(listId, list.get(i).getId(), i);
         }
     }
-
     @Transactional(readOnly = true)
     public GameListDTO findById(Long id) {
         GameList entity = gameListRepository.findById(id).get();
-        return new GameListDTO(entity);
+        return GameListDTO.builder()
+                .id(entity.getId())
+                .name(entity.getName())
+                .build();
     }
 }
