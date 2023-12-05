@@ -22,18 +22,19 @@ A aplicação consiste em uma listagem de games, onde você pode organizar os jo
 
 # Tecnologias utilizadas
 
+
+
 ## Back end
 - Java
 - Spring Boot
 - JPA / Hibernate
 - Maven
+- Banco de dados: Postgresql
   
 ## Front end
 Feito por: [Felipe Rossetto](https://github.com/Feliperosscoder)
 - TailwindCSS
 - ReactJS
-
-- Banco de dados: Postgresql
 
 # Autor
 
