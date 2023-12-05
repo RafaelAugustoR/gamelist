@@ -30,7 +30,7 @@ A aplicação consiste em uma listagem de games, onde você pode organizar os jo
   
 ## Front end
 Feito por: [Felipe Rossetto](https://github.com/Feliperosscoder)
-- TailWind
+- TailwindCSS
 - ReactJS
 
 - Banco de dados: Postgresql
