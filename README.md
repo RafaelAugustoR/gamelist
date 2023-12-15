@@ -22,16 +22,14 @@ A aplicação consiste em uma listagem de games, onde você pode organizar os jo
 
 # Tecnologias utilizadas
 
-
-
-## Back end
+## Back-end
 - Java
 - Spring Boot
 - JPA / Hibernate
 - Maven
 - Banco de dados: Postgresql
   
-## Front end
+## Front-end
 Feito por: [Felipe Rossetto](https://github.com/Feliperosscoder)
 - TailwindCSS
 - ReactJS
@@ -39,7 +37,6 @@ Feito por: [Felipe Rossetto](https://github.com/Feliperosscoder)
 # Autor
 
 Rafael Augusto e [Felipe Rossetto](https://github.com/Feliperosscoder)
-
 
 <div> 
 <a href="https://www.linkedin.com/in/rafaelaugustorodrigues/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white"  target="_blank"></a> 
